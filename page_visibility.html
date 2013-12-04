@@ -7,7 +7,7 @@
 <![endif]-->
 <link rel="stylesheet" href="/wp-content/themes/jack/css/all.css" type="text/css" />
 <style>
-    
+
     nav .search {
         display: none;
     }
@@ -52,10 +52,10 @@
         border-top: 1px solid #ccc;
     }
 
-    .left > p:first-of-type { 
-        background: #ffd987; 
-        font-style: italic; 
-        padding: 5px 10px; 
+    .left > p:first-of-type {
+        background: #ffd987;
+        font-style: italic;
+        padding: 5px 10px;
         margin-bottom: 40px;
     }
 
@@ -72,8 +72,8 @@
         display: inline-block !important;
     }
 
-    #promoNode { 
-        margin: 20px 0; 
+    #promoNode {
+        margin: 20px 0;
     }
 
     @media only screen and (max-width : 1024px) {
@@ -86,11 +86,11 @@
         }
     }
 </style>    <script>
-        
+
         // Adapted slightly from Sam Dutton
         // Set name of hidden property and visibility change event
         // since some browsers only offer vendor-prefixed support
-        var hidden, state, visibilityChange; 
+        var hidden, state, visibilityChange;
         if (typeof document.hidden !== "undefined") {
             hidden = "hidden";
             visibilityChange = "visibilitychange";
@@ -108,15 +108,17 @@
             visibilityChange = "webkitvisibilitychange";
             state = "webkitVisibilityState";
         }
-        
+
         // Add a listener that constantly changes the title
         document.addEventListener(visibilityChange, function() {
             document.title = document[state];
+            var dom = document.getElementById("visibleState");
+            dom.innerText = document[state];
         }, false);
-        
+
         // Set the initial value
         document.title = document[state];
-        
+
     </script>
 </head>
 <body>
@@ -136,99 +138,19 @@ s.parentNode.insertBefore(g,s)}(document,"script"));
 <!-- header -->
 <header><div class="centerSite">
 
-            <!-- top menu: dwb -->
-    <nav role="navigation" class="dwb"><ul>
-        <li class="home"><a href="/" accesskey="h"><span>David Walsh Blog</span></a></li>
-        <li class="articles">
-            <a href="/page/1" accesskey="a">articles</a>
-            <div class="dropdown">
-                <ul>
-                    <li><a href="/page/1">Latest Posts</a></li>
-                    <li><a href="/tutorials/features">Features</a></li>
-                    <li><a href="/tutorials/tips">Quick Tips</a></li>
-                    <li><a href="/s" rel="nofollow">Script &amp; Style</a></li>
-                    <li class="sep"></li>
-                    <li><a href="/tutorials/html5">HTML5</a></li>
-                    <li><a href="/tutorials/css/animations">CSS Animations</a></li>
-                    <li><a href="/tutorials/firefoxos">Firefox OS</a></li>
-                    <li><a href="/tutorials/jquery">jQuery</a></li>
-                    <li><a href="/tutorials/mootools">MooTools</a></li>
-                    <li><a href="/tutorials/php">PHP</a></li>
-                    <li class="sep"></li>
-                    <li><a href="/guest-post">Submit Guest Post</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="demos">
-            <a href="/demos" accesskey="d">demos</a>
-            <div class="dropdown">
-                <ul>
-                    <li><a href="/demos">All Demos</a></li>
-                    <li><a href="/demos/jquery">jQuery Demos</a></li>
-                    <li><a href="/demos/mootools">MooTools Demos</a></li>
-                    <li><a href="/demos/css">CSS Demos</a></li>
-                    <li><a href="/demos/html5">HTML5 Demos</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="connect">
-            <a href="/forums" accesskey="c">forums</a>
-            <div class="dropdown">
-                <ul>
-                    <li><a href="/forums/forum/mootools">MooTools 1.x</a></li>
-                    <li><a href="/forums/forum/mootools-2">MooTools 2</a></li>
-                    <li><a href="/forums/forum/css">CSS</a></li>
-                    <li><a href="/forums/forum/html5-mobile">HTML5 &amp; Mobile</a></li>
-                    <li><a href="/forums/forum/jquery">jQuery</a></li>
-                    <li><a href="/forums/forum/firefox-os">Firefox OS</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="discounts"><a href="/deals">deals</a></li>
-        <li class="about">
-            <a href="/about">david walsh</a>
-            <div class="dropdown">
-                <ul>
-                    <li><a href="/about-david-walsh">About Me</a></li>
-                    <li><a href="/contact">Contact Me</a></li>
-                    <li><a href="/mozilla">Mozilla</a></li>
-                    <li class="sep"></li>
-                    <li><a href="/feed" data-noxhr="true" rel="nofollow">RSS Feed</a></li>
-                    <li><a href="//twitter.com/davidwalshblog" rel="nofollow">Twitter</a></li>
-                    <li><a href="//facebook.com/davidwalshblog" rel="nofollow">Facebook</a></li>
-                    <li><a href="//plus.google.com/114538814489633467974" rel="nofollow">Google +</a></li>
-                    <li><a href="//linkedin.com/in/davidjameswalsh" rel="nofollow">LinkedIn</a></li>
-                    <li><a href="//alpha.app.net/davidwalsh" rel="nofollow">App.Net</a></li>
-                    <li><a href="//github.com/darkwing" rel="nofollow">GitHub</a></li>
-                    <li><a href="//codepen.io/darkwing" rel="nofollow">CodePen</a></li>
-                    <li><a href="/chat" rel="nofollow">Chat</a></li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-
-        <!-- small logo block, with search, blog title, banner ad, etc. --> 
-        <section class="search"><form action="//google.com/search" id="searchForm">
-            <input type="search" placeholder="Search..." name="q" id="q" accesskey="s" autocomplete="on" required />
-            <input type="hidden" name="sitesearch" value="davidwalsh.name" />
-        </form></section>
-    </nav>
-    <div class="centerSite"><a href="/" class="headerTitle">The David Walsh Blog</a></div>
-    </div></header>
-
-<!-- holds content, will be frequently changed -->
 <div id="contentHolder">
 
     <!-- start the left section if not the homepage -->
     <section class="left">
 <h1>Page Visibility API</h1>
 <div class="p">Read <a href="http://davidwalsh.name/page-visibility" target="_top">Page Visibility API</a></div>
-<div id="promoNode"></div>  
+<div id="promoNode"></div>
     <p>Keep track of the current tab title as you switch back and forth;  it will change to this document's current visibilityState!</p>
-    
-    
-    
-        
+
+    Current orientation ( event ): <span id="visibleState"> </span> <br>
+
+
+
 </section>
 
 <style>
@@ -244,7 +166,7 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
 <div id="bsap_1280449" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
 <!-- End BuySellAds Zone Code -->
 
-<!-- ads here 
+<!-- ads here
 <div class="demoAds">
     <div id="bsap_1236348" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
 </div>
@@ -311,7 +233,7 @@ window.addEventListener("load", function() {
             size: "medium"
         }, createElement("span", {}, promoNode));
         loadScript("//apis.google.com/js/plusone.js");
-        
+
         // Create the Facebook widget
         createElement("iframe", {
             src: "//facebook.com/plugins/like.php?href=" + w.location,
@@ -322,7 +244,7 @@ window.addEventListener("load", function() {
         }, createElement("span", {}, promoNode));
 
 })();
-    
+
 });
 </script>
 </body>
