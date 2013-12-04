@@ -7,7 +7,7 @@
 <![endif]-->
 <link rel="stylesheet" href="/wp-content/themes/jack/css/all.css" type="text/css" />
 <style>
-    
+
     nav .search {
         display: none;
     }
@@ -52,10 +52,10 @@
         border-top: 1px solid #ccc;
     }
 
-    .left > p:first-of-type { 
-        background: #ffd987; 
-        font-style: italic; 
-        padding: 5px 10px; 
+    .left > p:first-of-type {
+        background: #ffd987;
+        font-style: italic;
+        padding: 5px 10px;
         margin-bottom: 40px;
     }
 
@@ -72,8 +72,8 @@
         display: inline-block !important;
     }
 
-    #promoNode { 
-        margin: 20px 0; 
+    #promoNode {
+        margin: 20px 0;
     }
 
     @media only screen and (max-width : 1024px) {
@@ -86,11 +86,11 @@
         }
     }
 </style>    <script>
-        
+
         // Adapted slightly from Sam Dutton
         // Set name of hidden property and visibility change event
         // since some browsers only offer vendor-prefixed support
-        var hidden, state, visibilityChange; 
+        var hidden, state, visibilityChange;
         if (typeof document.hidden !== "undefined") {
             hidden = "hidden";
             visibilityChange = "visibilitychange";
@@ -108,15 +108,17 @@
             visibilityChange = "webkitvisibilitychange";
             state = "webkitVisibilityState";
         }
-        
+
         // Add a listener that constantly changes the title
         document.addEventListener(visibilityChange, function() {
             document.title = document[state];
+            var dom = document.getElementById("visibleState");
+            dom.innerText = document[state];
         }, false);
-        
+
         // Set the initial value
         document.title = document[state];
-        
+
     </script>
 </head>
 <body>
@@ -142,12 +144,13 @@ s.parentNode.insertBefore(g,s)}(document,"script"));
     <section class="left">
 <h1>Page Visibility API</h1>
 <div class="p">Read <a href="http://davidwalsh.name/page-visibility" target="_top">Page Visibility API</a></div>
-<div id="promoNode"></div>  
+<div id="promoNode"></div>
     <p>Keep track of the current tab title as you switch back and forth;  it will change to this document's current visibilityState!</p>
-    
-    
-    
-        
+
+    Current orientation ( event ): <span id="visibleState"> </span> <br>
+
+
+
 </section>
 
 <style>
@@ -163,7 +166,7 @@ body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; ma
 <div id="bsap_1280449" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
 <!-- End BuySellAds Zone Code -->
 
-<!-- ads here 
+<!-- ads here
 <div class="demoAds">
     <div id="bsap_1236348" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
 </div>
@@ -230,7 +233,7 @@ window.addEventListener("load", function() {
             size: "medium"
         }, createElement("span", {}, promoNode));
         loadScript("//apis.google.com/js/plusone.js");
-        
+
         // Create the Facebook widget
         createElement("iframe", {
             src: "//facebook.com/plugins/like.php?href=" + w.location,
@@ -241,7 +244,7 @@ window.addEventListener("load", function() {
         }, createElement("span", {}, promoNode));
 
 })();
-    
+
 });
 </script>
 </body>
