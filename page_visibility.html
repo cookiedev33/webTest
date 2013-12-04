@@ -111,7 +111,6 @@
 
         // Add a listener that constantly changes the title
         document.addEventListener(visibilityChange, function() {
-            document.title = document[state];
             var dom = document.getElementById("visibleState");
             dom.innerText = document[state];
         }, false);
