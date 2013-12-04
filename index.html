@@ -1,71 +1,330 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Webtest by cookiedev33</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr">
+<head>  <title>Page Visibility API Example</title>
+    <meta name="description" content="The Page Visibility API allows developers to react to changes in page visibility via the visibility change document event.  New document.hidden and document.visibilityChange properties are also available." />
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Webtest</h1>
-        <p></p>
-
-        <p class="view"><a href="https://github.com/cookiedev33/webTest">View the Project on GitHub <small>cookiedev33/webTest</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/cookiedev33/webTest/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/cookiedev33/webTest/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/cookiedev33/webTest">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/cookiedev33">cookiedev33</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <script src="/wp-content/themes/jack/js/lib/html5shiv/src/html5shiv.js?{{ themeVersion }}"></script>
+<![endif]-->
+<link rel="stylesheet" href="/wp-content/themes/jack/css/all.css" type="text/css" />
+<style>
     
-  </body>
+    nav .search {
+        display: none;
+    }
+
+    .demoFrame header,
+    .demoFrame .footer,
+    .demoFrame h1,
+    .demoFrame .p {
+        display: none !important;
+    }
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    h2, h3 {
+        font-size: 1.7em;
+    }
+
+    .left {
+        width: 920px !important;
+        padding-bottom: 40px;
+        min-height: auto !important;
+        padding-right: 0;
+        float: left;
+    }
+
+    div.p {
+        font-size: .8em;
+        font-family: arial;
+        margin-top: -20px;
+        font-style: italic;
+        padding: 10px 0;
+    }
+
+    .footer {
+        padding: 20px;
+        margin: 20px 0 0 0;
+        background: #f8f8f8;
+        font-weight: bold;
+        font-family: arial;
+        border-top: 1px solid #ccc;
+    }
+
+    .left > p:first-of-type { 
+        background: #ffd987; 
+        font-style: italic; 
+        padding: 5px 10px; 
+        margin-bottom: 40px;
+    }
+
+    .demoAds {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 270px;
+        padding: 10px 0 0 10px;
+        background: #f8f8f8;
+    }
+    .demoAds a {
+        margin: 0 10px 10px 0 !important;
+        display: inline-block !important;
+    }
+
+    #promoNode { 
+        margin: 20px 0; 
+    }
+
+    @media only screen and (max-width : 1024px) {
+        .left {
+            float: none;
+        }
+
+        body .one .bsa_it_ad {
+            position: relative !important;
+        }
+    }
+</style>    <script>
+        
+        // Adapted slightly from Sam Dutton
+        // Set name of hidden property and visibility change event
+        // since some browsers only offer vendor-prefixed support
+        var hidden, state, visibilityChange; 
+        if (typeof document.hidden !== "undefined") {
+            hidden = "hidden";
+            visibilityChange = "visibilitychange";
+            state = "visibilityState";
+        } else if (typeof document.mozHidden !== "undefined") {
+            hidden = "mozHidden";
+            visibilityChange = "mozvisibilitychange";
+            state = "mozVisibilityState";
+        } else if (typeof document.msHidden !== "undefined") {
+            hidden = "msHidden";
+            visibilityChange = "msvisibilitychange";
+            state = "msVisibilityState";
+        } else if (typeof document.webkitHidden !== "undefined") {
+            hidden = "webkitHidden";
+            visibilityChange = "webkitvisibilitychange";
+            state = "webkitVisibilityState";
+        }
+        
+        // Add a listener that constantly changes the title
+        document.addEventListener(visibilityChange, function() {
+            document.title = document[state];
+        }, false);
+        
+        // Set the initial value
+        document.title = document[state];
+        
+    </script>
+</head>
+<body>
+<script>
+var _gaq=[["_setAccount","UA-2087880-2"],["_trackPageview"]];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+
+
+<!-- Add the HTML header -->
+<div id="page">
+
+<a name="top" id="top"></a>
+
+<!-- header -->
+<header><div class="centerSite">
+
+            <!-- top menu: dwb -->
+    <nav role="navigation" class="dwb"><ul>
+        <li class="home"><a href="/" accesskey="h"><span>David Walsh Blog</span></a></li>
+        <li class="articles">
+            <a href="/page/1" accesskey="a">articles</a>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="/page/1">Latest Posts</a></li>
+                    <li><a href="/tutorials/features">Features</a></li>
+                    <li><a href="/tutorials/tips">Quick Tips</a></li>
+                    <li><a href="/s" rel="nofollow">Script &amp; Style</a></li>
+                    <li class="sep"></li>
+                    <li><a href="/tutorials/html5">HTML5</a></li>
+                    <li><a href="/tutorials/css/animations">CSS Animations</a></li>
+                    <li><a href="/tutorials/firefoxos">Firefox OS</a></li>
+                    <li><a href="/tutorials/jquery">jQuery</a></li>
+                    <li><a href="/tutorials/mootools">MooTools</a></li>
+                    <li><a href="/tutorials/php">PHP</a></li>
+                    <li class="sep"></li>
+                    <li><a href="/guest-post">Submit Guest Post</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="demos">
+            <a href="/demos" accesskey="d">demos</a>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="/demos">All Demos</a></li>
+                    <li><a href="/demos/jquery">jQuery Demos</a></li>
+                    <li><a href="/demos/mootools">MooTools Demos</a></li>
+                    <li><a href="/demos/css">CSS Demos</a></li>
+                    <li><a href="/demos/html5">HTML5 Demos</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="connect">
+            <a href="/forums" accesskey="c">forums</a>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="/forums/forum/mootools">MooTools 1.x</a></li>
+                    <li><a href="/forums/forum/mootools-2">MooTools 2</a></li>
+                    <li><a href="/forums/forum/css">CSS</a></li>
+                    <li><a href="/forums/forum/html5-mobile">HTML5 &amp; Mobile</a></li>
+                    <li><a href="/forums/forum/jquery">jQuery</a></li>
+                    <li><a href="/forums/forum/firefox-os">Firefox OS</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="discounts"><a href="/deals">deals</a></li>
+        <li class="about">
+            <a href="/about">david walsh</a>
+            <div class="dropdown">
+                <ul>
+                    <li><a href="/about-david-walsh">About Me</a></li>
+                    <li><a href="/contact">Contact Me</a></li>
+                    <li><a href="/mozilla">Mozilla</a></li>
+                    <li class="sep"></li>
+                    <li><a href="/feed" data-noxhr="true" rel="nofollow">RSS Feed</a></li>
+                    <li><a href="//twitter.com/davidwalshblog" rel="nofollow">Twitter</a></li>
+                    <li><a href="//facebook.com/davidwalshblog" rel="nofollow">Facebook</a></li>
+                    <li><a href="//plus.google.com/114538814489633467974" rel="nofollow">Google +</a></li>
+                    <li><a href="//linkedin.com/in/davidjameswalsh" rel="nofollow">LinkedIn</a></li>
+                    <li><a href="//alpha.app.net/davidwalsh" rel="nofollow">App.Net</a></li>
+                    <li><a href="//github.com/darkwing" rel="nofollow">GitHub</a></li>
+                    <li><a href="//codepen.io/darkwing" rel="nofollow">CodePen</a></li>
+                    <li><a href="/chat" rel="nofollow">Chat</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+        <!-- small logo block, with search, blog title, banner ad, etc. --> 
+        <section class="search"><form action="//google.com/search" id="searchForm">
+            <input type="search" placeholder="Search..." name="q" id="q" accesskey="s" autocomplete="on" required />
+            <input type="hidden" name="sitesearch" value="davidwalsh.name" />
+        </form></section>
+    </nav>
+    <div class="centerSite"><a href="/" class="headerTitle">The David Walsh Blog</a></div>
+    </div></header>
+
+<!-- holds content, will be frequently changed -->
+<div id="contentHolder">
+
+    <!-- start the left section if not the homepage -->
+    <section class="left">
+<h1>Page Visibility API</h1>
+<div class="p">Read <a href="http://davidwalsh.name/page-visibility" target="_top">Page Visibility API</a></div>
+<div id="promoNode"></div>  
+    <p>Keep track of the current tab title as you switch back and forth;  it will change to this document's current visibilityState!</p>
+    
+    
+    
+        
+</section>
+
+<style>
+body .one .bsa_it_ad { background: #f8f8f8; border: none; font-family: inherit; width: 200px; position: absolute; top: 0; right: 0; text-align: center; border-radius: 8px; }
+body .one .bsa_it_ad .bsa_it_i { display: block; padding: 0; float: none; margin: 0 0 5px; }
+body .one .bsa_it_ad .bsa_it_i img { padding: 10px; border: none; margin: 0 auto; }
+body .one .bsa_it_ad .bsa_it_t { padding: 6px 0; }
+body .one .bsa_it_ad .bsa_it_d { padding: 0; font-size: 12px; color: #333; }
+body .one .bsa_it_p { display: none; }
+body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; margin: 12px 15px 0; text-align: right; }
+</style>
+<!-- BuySellAds Zone Code -->
+<div id="bsap_1280449" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
+<!-- End BuySellAds Zone Code -->
+
+<!-- ads here 
+<div class="demoAds">
+    <div id="bsap_1236348" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
+</div>
+-->
+
+</div>
+
+<div class="footer"><div class="centerSite">
+&raquo; Back to: <a href="http://davidwalsh.name/page-visibility" target="_top">Page Visibility API</a>
+</div></div>
+
+<script>
+window.addEventListener("load", function() {
+    var s = "script",
+        d = document,
+        w = window,
+        firstScript = d.getElementsByTagName(s)[0]
+
+    // BSA bitches!
+    var bsa = d.createElement(s);
+    bsa.async = 1;
+    bsa.src = "//s3.buysellads.com/ac/bsa.js";
+    inject(bsa);
+
+    // Injects an sync script
+    function inject(s) {
+        firstScript.parentNode.insertBefore(s, firstScript);
+    }
+
+    // Promo!
+    (function() {
+
+        var promoNode = d.getElementById("promoNode");
+
+        // Temporary - use MooTools 2.0 when available
+        function createElement(tagName, attr, parent) {
+            var el = d.createElement(tagName);
+            for(prop in attr) {
+                if(attr.hasOwnProperty(prop)) el.setAttribute(prop, attr[prop]);
+            }
+            parent.appendChild(el);
+            return el;
+        }
+
+        // Loads a script
+        function loadScript(url) {
+            var script = d.createElement("script");
+            script.src = url;
+            script.setAttribute("async", "true");
+            d.documentElement.firstChild.appendChild(script);
+        }
+
+        // Create the Twitter widget, inject
+        createElement("a", {
+            href: "//twitter.com/share",
+            "data-count": "horizontal",
+            "class": "twitter-share-button"
+        }, createElement("span", {}, promoNode));
+        loadScript("http://platform.twitter.com/widgets.js");
+
+        // Create the Google Plus icon
+        var gl = createElement("g:plusone", {
+            href: w.location,
+            size: "medium"
+        }, createElement("span", {}, promoNode));
+        loadScript("//apis.google.com/js/plusone.js");
+        
+        // Create the Facebook widget
+        createElement("iframe", {
+            src: "//facebook.com/plugins/like.php?href=" + w.location,
+            scrolling: "no",
+            frameborder: 0,
+            allowTransparency: true,
+            style: "border:none; overflow:hidden; float:left; height:24px; margin-top:3px;"
+        }, createElement("span", {}, promoNode));
+
+})();
+    
+});
+</script>
+</body>
 </html>
+
