@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SYLEE`s Full Screen API Example</title>
+  <meta charset="UTF-8" />
+  <script>
+    function launchFullscreen(element) {
+      if(element.requestFullScreen) {
+        element.requestFullScreen();
+      } else if(element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if(element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+      }
+    }
+
+    function cancelFullscreen() {
+      if(document.cancelFullScreen) {
+        document.cancelFullScreen();
+      } else if(document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if(document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <font size=100> Full Screen API Test </font>
+  <br><br><br>
+    <button onclick="launchFullscreen(document.documentElement);" style="width:700;height:250;font-size:90px">Enter Fullscreen</button><br><br>
+    <button onclick="cancelFullscreen();" style="width:700;height:250;font-size:90px">Exit Fullscreen</button>
+</body>
+</html>
