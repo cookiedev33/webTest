@@ -55,13 +55,18 @@
 		
 		#main_header > label.right {
 			background: url('sprites.png');
-			backgroud-position: -62px 0px;
+			background-position: -62px 0px;
 			text-indent: -99999px;
 		}
 	</style>
 	
 	<!-- 토글 목록 -->
-	<style></style>
+	<style>
+		#toggle { display: none; }
+		#toggle + #wrap > #toggle_gnb_wrap { display: none; }
+		#toggle:checked + #wrap > #toggle_gnb_wrap { display: block; } 
+	</style>
+	
 	<!-- 네비게이션(1) -->
 	<style></style>
 	<!-- 네비게이션(2) -->
@@ -79,6 +84,21 @@
 			<h1>Mobile</h1>
 			<label class="right" for="toggle" onclick="">Toggle</label>
 		</header>
+		
+		<div id="toggle_gnb_wrap">
+			<div id="toggle_gnb">
+				<ul>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+					<li><a href="#">버튼</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
